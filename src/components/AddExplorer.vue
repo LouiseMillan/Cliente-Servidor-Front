@@ -35,11 +35,11 @@
           name="mission"
         />
       </div>
-      <button @click="saveExplorer" class="btn btn-success">Agregar</button>
+      <button @click="saveExplorer" class="btn btn-info">Agregar</button>
     </div>
     <div v-else>
       <h4> Explorer creado exitosamente. </h4>
-      <button class="btn btn-success" @click="newExplorer">Add</button>
+      <button class="btn btn-info" @click="newExplorer">Add</button>
     </div>
   </div>
 </template>

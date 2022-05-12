@@ -35,11 +35,11 @@
           name="mainStack"
         />
       </div>
-      <button @click="saveCommander" class="btn btn-success">Agregar</button>
+      <button @click="saveCommander" class="btn btn-info">Agregar</button>
     </div>
     <div v-else>
       <h4> Commander creado exitosamente. </h4>
-      <button class="btn btn-success" @click="newCommander">Add</button>
+      <button class="btn btn-info" @click="newCommander">Add</button>
     </div>
   </div>
 </template>
