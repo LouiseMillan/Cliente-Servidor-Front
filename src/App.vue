@@ -3,12 +3,21 @@
     <nav class="navbar navbar-expand navbar-light bg-white">
       <router-link to="/" class="navbar-brand">LaunchX</router-link>
       <div class="navbar-nav mr-auto">
+        
+        <li class="nav-item">
+          <router-link to="/commanders" class="nav-link">Mission Commanders</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/addCommander" class="nav-link">Agregar Mission Commanders</router-link>
+        </li>
+
         <li class="nav-item">
           <router-link to="/explorers" class="nav-link">Explorers</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/add" class="nav-link">Agregar Explorer</router-link>
+          <router-link to="/addExplorer" class="nav-link">Agregar Explorer</router-link>
         </li>
+
       </div>
     </nav>
     <div class="container mt-3">

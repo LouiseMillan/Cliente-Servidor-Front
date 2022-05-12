@@ -1,7 +1,7 @@
 <template>
   <div class="submit-form">
     <div v-if="!submitted">
-    <h3>Nuevo Explorer</h3>
+    <h3>Nuevo Commander</h3>
       <div class="form-group">
         <label for="name">Nombre </label>
         <input
@@ -9,7 +9,7 @@
           class="form-control"
           id="name"
           required
-          v-model="explorer.name"
+          v-model="commander.name"
           name="name"
         />
       </div>
@@ -20,64 +20,64 @@
           class="form-control"
           id="username"
           required
-          v-model="explorer.username"
+          v-model="commander.username"
           name="username"
         />
       </div>
       <div class="form-group">
-        <label for="mission">Misión</label>
+        <label for="mainStack">Main Stack</label>
         <input
           type="text"
           class="form-control"
-          id="mission"
+          id="mainStack"
           required
-          v-model="explorer.mission"
-          name="mission"
+          v-model="commander.mainStack"
+          name="mainStack"
         />
       </div>
-      <button @click="saveExplorer" class="btn btn-success">Agregar</button>
+      <button @click="saveCommander" class="btn btn-success">Agregar</button>
     </div>
     <div v-else>
-      <h4> Explorer creado exitosamente. </h4>
-      <button class="btn btn-success" @click="newExplorer">Add</button>
+      <h4> Commander creado exitosamente. </h4>
+      <button class="btn btn-success" @click="newCommander">Add</button>
     </div>
   </div>
 </template>
 
 <script>
-import ExplorerService from "../services/ExplorerService";
+import CommanderService from "../services/CommanderService";
 export default {
-  name: "add-explorer",
+  name: "add-commander",
   data() {
     return {
-      explorer: {
+      commander: {
         id: null,
         name: "",
         username: "",
-        mission: ""
+        mainStack: ""
       },
       submitted: false
     };
   },
   methods: {
-    saveExplorer() {
+    saveCommander() {
       var data = {
-        name: this.explorer.name,
-        username: this.explorer.username,
-        mission: this.explorer.mission
+        name: this.commander.name,
+        username: this.commander.username,
+        mainStack: this.commander.mainStack
       };
-      ExplorerService.create(data)
+      CommanderService.create(data)
         .then(response => {
-          this.explorer.id = response.data.id;
+          this.commander.id = response.data.id;
           this.submitted = true;
         })
         .catch(e => {
           console.log(e);
         });
     },
-    newExplorer() {
+    newCommander() {
       this.submitted = false;
-      this.explorer = {};
+      this.commander = {};
     }
   }
 };
